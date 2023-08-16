@@ -23,16 +23,16 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 }
             }
         }
-        // stage('Integration testing'){
+        stage('Integration testing'){
             
-        //     steps{
+            steps{
                 
-        //         script{
+                script{
                     
-        //             sh 'mvn verify -DskipUnitTests'
-        //         }
-        //     }
-        // }
+                    bat '"C:\\Users\\Moad\\Downloads\\apache-maven-3.9.4-bin\\apache-maven-3.9.4\\bin\\mvn" verify -DskipUnitTests'
+                }
+            }
+        }
         // stage('Maven build'){
             
         //     steps{
