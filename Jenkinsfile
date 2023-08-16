@@ -19,7 +19,7 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 
                 script{
                     
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
