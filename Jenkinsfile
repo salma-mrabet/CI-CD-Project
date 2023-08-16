@@ -39,7 +39,7 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 
                 script{
                     
-                    sh '"C:\\Users\\Moad\\Downloads\\apache-maven-3.9.4-bin\\apache-maven-3.9.4\\bin\\mvn" clean install'
+                    bat '"C:\\Users\\Moad\\Downloads\\apache-maven-3.9.4-bin\\apache-maven-3.9.4\\bin\\mvn" clean install'
                 }
             }
         }
