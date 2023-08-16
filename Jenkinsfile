@@ -19,7 +19,7 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 
                 script{
                     
-                    bat '"C:\\Users\\Moad\\Downloads\\apache-maven-3.9.4-bin\\apache-maven-3.9.4\\bin\\mvn" test'
+                    bat 'mvn test'
                 }
             }
         }
