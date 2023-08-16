@@ -33,16 +33,16 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 }
             }
         }
-        // stage('Maven build'){
+        stage('Maven build'){
             
-        //     steps{
+            steps{
                 
-        //         script{
+                script{
                     
-        //             sh 'mvn clean install'
-        //         }
-        //     }
-        // }
+                    sh '"C:\\Users\\Moad\\Downloads\\apache-maven-3.9.4-bin\\apache-maven-3.9.4\\bin\\mvn" clean install'
+                }
+            }
+        }
         // stage('Static code analysis'){
             
         //     steps{
