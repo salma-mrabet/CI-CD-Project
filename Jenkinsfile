@@ -43,20 +43,19 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                 }
             }
         }
-        // stage('Static code analysis'){
+        stage('Static code analysis'){
             
-        //     steps{
+            steps{
                 
-        //         script{
+                script{
                     
-        //             withSonarQubeEnv(credentialsId: 'sonar-api') {
-                        
-        //                 sh 'mvn clean package sonar:sonar'
-        //             }
-        //            }
+                    withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+                      bat 'mvn clean package sonar:sonar'
+                    }
+                   }
                     
-        //         }
-        //     }
+                }
+            }
         //     stage('Quality Gate Status'){
                 
         //         steps{
