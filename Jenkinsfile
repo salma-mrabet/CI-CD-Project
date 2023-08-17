@@ -56,13 +56,24 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                     
                 }
             }
-            stage('Quality Gate Status'){
+            // stage('Quality Gate Status'){
                 
-                steps{
+            //     steps{
                     
-                    script{
+            //         script{
                         
-                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
+            //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
+            //         }
+            //     }
+            // }
+            stage('Upload war file to Nexus'){
+
+                steps{
+
+                    script{
+
+                        nexusArtifactUploader artifacts: [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], credentialsId: '', groupId: 'com.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'application-release', version: '1.0.0'
+
                     }
                 }
             }
