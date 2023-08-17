@@ -72,8 +72,15 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
 
                     script{
 
-                        nexusArtifactUploader artifacts: [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], credentialsId: '', groupId: 'com.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'application-release', version: '1.0.0'
-
+                        nexusArtifactUploader artifacts: 
+                        [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], 
+                        credentialsId: 'nexus-auth', 
+                        groupId: 'com.example', 
+                        nexusUrl: 'localhost:8081', 
+                        nexusVersion: 'nexus3', 
+                        protocol: 'http', 
+                        repository: 'application-release', 
+                        version: '1.0.0'
                     }
                 }
             }
