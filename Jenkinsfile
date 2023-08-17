@@ -56,16 +56,16 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                     
                 }
             }
-        //     stage('Quality Gate Status'){
+            stage('Quality Gate Status'){
                 
-        //         steps{
+                steps{
                     
-        //             script{
+                    script{
                         
-        //                 waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
-        //             }
-        //         }
-        //     }
+                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api-key'
+                    }
+                }
+            }
          }
         
 }
