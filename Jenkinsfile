@@ -89,7 +89,7 @@ pipeline{
 
                     script{
 
-                        def readPomVersion = readMavenPom file : 'pom.xml'
+                        // def readPomVersion = readMavenPom file : 'pom.xml'
 
                         nexusArtifactUploader artifacts: 
                         [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], 
@@ -99,7 +99,7 @@ pipeline{
                         nexusVersion: 'nexus3', 
                         protocol: 'http', 
                         repository: 'application-release', 
-                        version: "${readPomVersion}"
+                        version: '1.0.2'
                     }
                 }
         }
