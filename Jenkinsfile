@@ -72,6 +72,8 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
 
                     script{
 
+                        def readPomVersion = readMavenPom file : 'pom.xml'
+
                         nexusArtifactUploader artifacts: 
                         [[artifactId: 'springboot', classifier: '', file: 'target/Uber.jar', type: 'jar']], 
                         credentialsId: 'nexus-auth', 
@@ -80,7 +82,7 @@ git branch: 'main', url: 'https://github.com/salma-mrabet/application'          
                         nexusVersion: 'nexus3', 
                         protocol: 'http', 
                         repository: 'application-release', 
-                        version: '1.0.0'
+                        version: "${readPomVersion}"
                     }
                 }
             }
