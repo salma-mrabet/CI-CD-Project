@@ -112,9 +112,9 @@ pipeline{
 
                     // building a Docker image and giving it a tag based on the Jenkins job name and the build number.
 
-                    bat 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
-                    bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:v1.$BUILD_ID'
-                    bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:latest'
+                    bat 'docker image build -t ${JOB_NAME}:v1.${BUILD_ID} .'
+                    bat 'docker image tag ${JOB_NAME}:v1.${BUILD_ID} salmamrabet/${JOB_NAME}:v1.${BUILD_ID}'
+                    bat 'docker image tag ${JOB_NAME}:v1.${BUILD_ID} salmamrabet/${JOB_NAME}:v1.${BUILD_ID}'
 
 
 
