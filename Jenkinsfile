@@ -104,21 +104,36 @@ pipeline{
                 }
         }
 
-        // stage('Docker Image Build'){
+        stage('Docker Image Build'){
 
-        //     steps{
+            steps{
 
-        //         script{
+                script{
 
-        //             // building a Docker image and giving it a tag based on the Jenkins job name and the build number.
+                    // building a Docker image and giving it a tag based on the Jenkins job name and the build number.
 
-        //             bat 'docker image build -t "$JOB_NAME:v1.$BUILD_ID" .'
-        //             bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:v1.$BUILD_ID'
-        //             bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:latest'
+                    bat 'docker image build -t "$JOB_NAME:v1.$BUILD_ID" .'
+                    bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:v1.$BUILD_ID'
+                    bat 'docker image tag $JOB_NAME:v1.$BUILD_ID salmamrabet/$JOB_NAME:latest'
 
 
 
                 
+                }
+            }
+        }
+
+        // stage ('Push image to DockerHub'){
+
+        //     steps{
+
+        //         script{
+        //             withCredentials([string(credentialsId: 'git_creds', variable: 'docker_hub_cred')]) {
+  
+        //             bat 'docker login -u salma -p ${docker_hub_cred}'
+        //             bat 'docker image push salma/$JOB_NAME:v1.$BUILD_ID '
+        //             bat 'docker image push salma/$JOB_NAME:latest '
+        //             }
         //         }
         //     }
         // }
